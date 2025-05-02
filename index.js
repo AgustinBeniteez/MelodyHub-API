@@ -20,6 +20,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Middleware de registro para todas las solicitudes
+app.use((req, res, next) => {
+  const timestamp = new Date().toLocaleString();
+  console.log(
+    `[${timestamp}] ${colors.blue(req.method)} ${colors.green(req.url)}`
+  );
+  next();
+});
+
 // Puerto para el servidor
 const PORT = process.env.PORT || 3000;
 
@@ -55,11 +64,12 @@ app.get("/", (req, res) => {
       <p>Para buscar informacion de un artista especifico, utiliza la ruta <code style="color: white;">/artist/nombre-del-artista</code> </br>Por ejemplo:</p>
       <ul style="color: white;">
         <li><a href="/artist/Linkin Park" style="color: white;">/artist/Linkin Park</a> - Obtiene informacion sobre Linkin Park y sus albumes</li>
+        <li><a href="/artist/Linkin Park/2007" style="color: white;">/artist/Linkin Park/2007</a> - Obtiene los albumes de Linkin Park del year 2007</li>
+        <li><a href="/artist/Linkin Park/album/Meteora" style="color: white;">/artist/Linkin Park/album/Meteora</a> - Obtiene informacion especifica del album Meteora de Linkin Park</li>
       </ul>
     </body>
     </html>
   `);
-  
 });
 
 // Ruta para obtener todos los datos del hub
@@ -77,17 +87,21 @@ app.get("/hub", (req, res) => {
 app.get("/artist/:name", (req, res) => {
   try {
     const artistName = req.params.name;
-    const hubData = JSON.parse(readFileSync(new URL("./hub/api.json", import.meta.url)));
-    
+    const hubData = JSON.parse(
+      readFileSync(new URL("./hub/api.json", import.meta.url))
+    );
+
     // Buscar el artista en todos los géneros
     let artistInfo = null;
     for (const genre of hubData.genres) {
-      const artist = genre.artists.find(a => a.name.toLowerCase() === artistName.toLowerCase());
+      const artist = genre.artists.find(
+        (a) => a.name.toLowerCase() === artistName.toLowerCase()
+      );
       if (artist) {
         artistInfo = {
           name: artist.name,
           genre: genre.name,
-          albums: artist.albums
+          albums: artist.albums,
         };
         break;
       }
@@ -104,10 +118,96 @@ app.get("/artist/:name", (req, res) => {
   }
 });
 
+// Ruta para buscar artista por año
+app.get("/artist/:name/:year", (req, res) => {
+  try {
+    const artistName = req.params.name;
+    const year = parseInt(req.params.year);
+    const hubData = JSON.parse(
+      readFileSync(new URL("./hub/api.json", import.meta.url))
+    );
+
+    // Buscar el artista y filtrar sus álbumes por año
+    let artistInfo = null;
+    for (const genre of hubData.genres) {
+      const artist = genre.artists.find(
+        (a) => a.name.toLowerCase() === artistName.toLowerCase()
+      );
+      if (artist) {
+        const albumsByYear = artist.albums.filter(
+          (album) => album.releaseYear === year
+        );
+        if (albumsByYear.length > 0) {
+          artistInfo = {
+            name: artist.name,
+            genre: genre.name,
+            year: year,
+            albums: albumsByYear,
+          };
+        }
+        break;
+      }
+    }
+
+    if (artistInfo) {
+      res.json(artistInfo);
+    } else {
+      res.status(404).json({
+        error:
+          "No se encontraron álbumes para este artista en el año especificado",
+      });
+    }
+  } catch (error) {
+    console.error("Error al buscar artista por año:", error);
+    res.status(500).json({ error: "Error interno del servidor" });
+  }
+});
+
+// Ruta para buscar álbum específico de un artista
+app.get("/artist/:name/album/:albumName", (req, res) => {
+  try {
+    const artistName = req.params.name;
+    const albumName = req.params.albumName;
+    const hubData = JSON.parse(
+      readFileSync(new URL("./hub/api.json", import.meta.url))
+    );
+
+    // Buscar el artista y el álbum específico
+    let albumInfo = null;
+    for (const genre of hubData.genres) {
+      const artist = genre.artists.find(
+        (a) => a.name.toLowerCase() === artistName.toLowerCase()
+      );
+      if (artist) {
+        const album = artist.albums.find(
+          (a) => a.name.toLowerCase() === albumName.toLowerCase()
+        );
+        if (album) {
+          albumInfo = {
+            artist: artist.name,
+            genre: genre.name,
+            album: album,
+          };
+        }
+        break;
+      }
+    }
+
+    if (albumInfo) {
+      res.json(albumInfo);
+    } else {
+      res.status(404).json({ error: "Álbum no encontrado para este artista" });
+    }
+  } catch (error) {
+    console.error("Error al buscar álbum:", error);
+    res.status(500).json({ error: "Error interno del servidor" });
+  }
+});
+
 // Iniciar el servidor
 app.listen(PORT, () => {
   console.log(
-    `Servidor MelodyHub API corriendo en${colors.green(
+    `Servidor MelodyHub API ${colors.green(`🟢 corriendo`)} en${colors.blue(
       ` http://localhost:${PORT}`
     )}`
   );
