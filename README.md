@@ -1,22 +1,42 @@
-# MelodyHub-API 
-es una API diseñada para ofrecer a desarrolladores acceso a metadatos musicales completos: álbumes, pistas, autores y portadas en alta resolución.
-facilitando la integración en aplicaciones web mediante JSON sobre HTTP 
+# MelodyHub-API
 
-creado con Node.js.
+Bienvenido a MelodyHub API
+Versión: 1.4.1
 
-La API incluye los siguientes recursos principales:
+Puerto: 10000
 
-Álbumes (albums): Permite buscar por título, artista o UPC, y recupera información como fecha de lanzamiento, listados de pistas y URL de portada 
-MusicBrainz
+## Documentación
 
+Para obtener información sobre los datos del hub, visita `/hub`.
 
-Pistas (tracks): Ofrece detalles de cada canción (duración, posición en álbum, popularidad) y enlaces directos para streaming o previsualización 
-apidog
+### Búsqueda de Artistas
 
+Para buscar información de un artista específico, utiliza la ruta `/artist/nombre-del-artista`
 
-Artistas (artists): Permite consultar biografías resumidas, géneros asociados y discografías completas, con endpoints de búsqueda por nombre o ID interno 
-Last.fm
+Por ejemplo:
 
+- `/artist/Linkin Park` - Obtiene información sobre Linkin Park y sus álbumes
+- `/artist/Linkin Park/2007` - Obtiene los álbumes de Linkin Park del año 2007
+- `/artist/Linkin Park/album/Meteora` - Obtiene información específica del álbum Meteora de Linkin Park
 
-Imágenes (images): Expone recursos de carátulas de álbum y retratos de artistas en múltiples resoluciones, optimizadas para web y dispositivos móviles 
-BytePlus
+### Búsqueda por Género y Canciones
+
+Para obtener todos los artistas de un género específico, utiliza la ruta `/genre/nombre-del-genero/artists`
+
+Por ejemplo:
+
+- `/genre/Rock/artists` - Obtiene todos los artistas del género Rock
+
+Para buscar información sobre una canción específica, utiliza la ruta `/song/nombre-de-la-cancion`
+
+Por ejemplo:
+
+- `/song/Anti-Hero` - Obtiene información sobre la canción Anti-Hero
+
+## Características
+
+- Acceso a metadatos musicales completos
+- Información detallada de álbumes, pistas y artistas
+- Portadas en alta resolución
+- Integración fácil mediante JSON sobre HTTP
+- Desarrollado con Node.js
