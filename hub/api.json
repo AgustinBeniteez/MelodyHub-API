@@ -59,6 +59,123 @@
                 ]
               }
             ]
+          },
+          {
+            "name": "Ed Sheeran",
+            "albums": [
+              {
+                "name": "Subtract",
+                "releaseYear": 2023,
+                "coverImage": "/images/albums/ed-sheeran/subtract.jpg",
+                "songs": [
+                  "Boat",
+                  "Salt Water",
+                  "Eyes Closed",
+                  "Life Goes On",
+                  "Dusty",
+                  "End Of Youth",
+                  "Colourblind",
+                  "Curtains",
+                  "Borderline",
+                  "Spark"
+                ]
+              },
+              {
+                "name": "Equals",
+                "releaseYear": 2021,
+                "coverImage": "/images/albums/ed-sheeran/equals.jpg",
+                "songs": [
+                  "Tides",
+                  "Shivers",
+                  "First Times",
+                  "Bad Habits",
+                  "Overpass Graffiti",
+                  "The Joker And The Queen",
+                  "Leave Your Life",
+                  "Collide",
+                  "2step",
+                  "Stop The Rain"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Imagine Dragons",
+            "albums": [
+              {
+                "name": "Mercury - Acts 1 & 2",
+                "releaseYear": 2022,
+                "coverImage": "/images/albums/imagine-dragons/mercury.jpg",
+                "songs": [
+                  "My Life",
+                  "Lonely",
+                  "Wrecked",
+                  "Monday",
+                  "Easy Come Easy Go",
+                  "Giants",
+                  "Symphony",
+                  "Sharks",
+                  "Bones",
+                  "Higher Ground"
+                ]
+              },
+              {
+                "name": "Origins",
+                "releaseYear": 2018,
+                "coverImage": "/images/albums/imagine-dragons/origins.jpg",
+                "songs": [
+                  "Natural",
+                  "Boomerang",
+                  "Machine",
+                  "Cool Out",
+                  "Bad Liar",
+                  "West Coast",
+                  "Zero",
+                  "Bullet In A Gun",
+                  "Digital",
+                  "Only"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Arctic Monkeys",
+            "albums": [
+              {
+                "name": "The Car",
+                "releaseYear": 2022,
+                "coverImage": "/images/albums/arctic-monkeys/the-car.jpg",
+                "songs": [
+                  "There'd Better Be A Mirrorball",
+                  "I Ain't Quite Where I Think I Am",
+                  "Sculptures Of Anything Goes",
+                  "Jet Skis On The Moat",
+                  "Body Paint",
+                  "The Car",
+                  "Big Ideas",
+                  "Hello You",
+                  "Mr Schwartz",
+                  "Perfect Sense"
+                ]
+              },
+              {
+                "name": "AM",
+                "releaseYear": 2013,
+                "coverImage": "/images/albums/arctic-monkeys/am.jpg",
+                "songs": [
+                  "Do I Wanna Know?",
+                  "R U Mine?",
+                  "One For The Road",
+                  "Arabella",
+                  "I Want It All",
+                  "No. 1 Party Anthem",
+                  "Mad Sounds",
+                  "Fireside",
+                  "Why'd You Only Call Me When You're High?",
+                  "Snap Out Of It"
+                ]
+              }
+            ]
           }
         ]
       },
@@ -226,9 +343,6 @@
                 "releaseYear": 2025,
                 "coverImage": "/images/albums/linkin-park/from-zero-deluxe.jpg",
                 "songs": [
-                  
-                  
-                
                   "UP From the bottom",
                   "UnShatter"
                 ]
@@ -333,6 +447,123 @@
                 ]
               }
             ]
+          },
+          {
+            "name": "Ed Sheeran",
+            "albums": [
+              {
+                "name": "Subtract",
+                "releaseYear": 2023,
+                "coverImage": "/images/albums/ed-sheeran/subtract.jpg",
+                "songs": [
+                  "Boat",
+                  "Salt Water",
+                  "Eyes Closed",
+                  "Life Goes On",
+                  "Dusty",
+                  "End Of Youth",
+                  "Colourblind",
+                  "Curtains",
+                  "Borderline",
+                  "Spark"
+                ]
+              },
+              {
+                "name": "Equals",
+                "releaseYear": 2021,
+                "coverImage": "/images/albums/ed-sheeran/equals.jpg",
+                "songs": [
+                  "Tides",
+                  "Shivers",
+                  "First Times",
+                  "Bad Habits",
+                  "Overpass Graffiti",
+                  "The Joker And The Queen",
+                  "Leave Your Life",
+                  "Collide",
+                  "2step",
+                  "Stop The Rain"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Imagine Dragons",
+            "albums": [
+              {
+                "name": "Mercury - Acts 1 & 2",
+                "releaseYear": 2022,
+                "coverImage": "/images/albums/imagine-dragons/mercury.jpg",
+                "songs": [
+                  "My Life",
+                  "Lonely",
+                  "Wrecked",
+                  "Monday",
+                  "Easy Come Easy Go",
+                  "Giants",
+                  "Symphony",
+                  "Sharks",
+                  "Bones",
+                  "Higher Ground"
+                ]
+              },
+              {
+                "name": "Origins",
+                "releaseYear": 2018,
+                "coverImage": "/images/albums/imagine-dragons/origins.jpg",
+                "songs": [
+                  "Natural",
+                  "Boomerang",
+                  "Machine",
+                  "Cool Out",
+                  "Bad Liar",
+                  "West Coast",
+                  "Zero",
+                  "Bullet In A Gun",
+                  "Digital",
+                  "Only"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Arctic Monkeys",
+            "albums": [
+              {
+                "name": "The Car",
+                "releaseYear": 2022,
+                "coverImage": "/images/albums/arctic-monkeys/the-car.jpg",
+                "songs": [
+                  "There'd Better Be A Mirrorball",
+                  "I Ain't Quite Where I Think I Am",
+                  "Sculptures Of Anything Goes",
+                  "Jet Skis On The Moat",
+                  "Body Paint",
+                  "The Car",
+                  "Big Ideas",
+                  "Hello You",
+                  "Mr Schwartz",
+                  "Perfect Sense"
+                ]
+              },
+              {
+                "name": "AM",
+                "releaseYear": 2013,
+                "coverImage": "/images/albums/arctic-monkeys/am.jpg",
+                "songs": [
+                  "Do I Wanna Know?",
+                  "R U Mine?",
+                  "One For The Road",
+                  "Arabella",
+                  "I Want It All",
+                  "No. 1 Party Anthem",
+                  "Mad Sounds",
+                  "Fireside",
+                  "Why'd You Only Call Me When You're High?",
+                  "Snap Out Of It"
+                ]
+              }
+            ]
           }
         ]
       },
@@ -367,6 +598,231 @@
                   "Casualidad",
                   "Nada Para Ti",
                   "Estas Pa Mi"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Duki",
+            "albums": [
+              {
+                "name": "Antes de Ameri",
+                "releaseYear": 2023,
+                "coverImage": "/images/albums/duki/antes-de-ameri.jpg",
+                "songs": [
+                  "Los Ángeles",
+                  "Casi Amor",
+                  "Esto Recién Empieza",
+                  "Malbec",
+                  "Piensa en Mí",
+                  "Remember Me",
+                  "All Night",
+                  "Ultimo Baile",
+                  "Otro Level",
+                  "Sin Frenos"
+                ]
+              },
+              {
+                "name": "Temporada de Reggaeton 2",
+                "releaseYear": 2022,
+                "coverImage": "/images/albums/duki/temporada-de-reggaeton-2.jpg",
+                "songs": [
+                  "Givenchy",
+                  "Esto No Es Una Canción de Amor",
+                  "Ley de Atracción",
+                  "Te Necesito",
+                  "Buscando Calor",
+                  "Unfollow"
+                ]
+              },
+              {
+                "name": "Desde el Fin del Mundo",
+                "releaseYear": 2021,
+                "coverImage": "/images/albums/duki/desde-el-fin-del-mundo.jpg",
+                "songs": [
+                  "Rock & Roll",
+                  "Chico Estrella",
+                  "Además de Mí",
+                  "Como Si No Importara",
+                  "Pintao",
+                  "Cascada",
+                  "Sudor y Trabajo",
+                  "Muero de Fiesta Este Finde",
+                  "Goteo",
+                  "Top 5"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Bad Bunny",
+            "albums": [
+              {
+                "name": "nadie sabe lo que va a pasar mañana",
+                "releaseYear": 2023,
+                "coverImage": "/images/albums/bad-bunny/nadie-sabe.jpg",
+                "songs": [
+                  "NADIE SABE",
+                  "MONACO",
+                  "FINA",
+                  "HIBIKI",
+                  "MR. OCTOBER",
+                  "CYBERTRUCK",
+                  "VOU 787",
+                  "SEDA",
+                  "TELEFONO NUEVO",
+                  "MERCEDES CAROTA"
+                ]
+              },
+              {
+                "name": "Un Verano Sin Ti",
+                "releaseYear": 2022,
+                "coverImage": "/images/albums/bad-bunny/un-verano-sin-ti.jpg",
+                "songs": [
+                  "Moscow Mule",
+                  "Después de la Playa",
+                  "Me Porto Bonito",
+                  "Tití Me Preguntó",
+                  "Un Ratito",
+                  "Yo No Soy Celoso",
+                  "Tarot",
+                  "Neverita",
+                  "La Corriente",
+                  "Efecto"
+                ]
+              },
+              {
+                "name": "El Último Tour del Mundo",
+                "releaseYear": 2020,
+                "coverImage": "/images/albums/bad-bunny/el-ultimo-tour.jpg",
+                "songs": [
+                  "EL MUNDO ES MÍO",
+                  "TE MUDASTE",
+                  "HOY COBRÉ",
+                  "MALDITA POBREZA",
+                  "LA NOCHE DE ANOCHE",
+                  "TE DESEO LO MEJOR",
+                  "YO VISTO ASÍ",
+                  "HACIENDO QUE ME AMAS",
+                  "BOOKER T",
+                  "LA DROGA"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Rauw Alejandro",
+            "albums": [
+              {
+                "name": "PLAYA SATURNO",
+                "releaseYear": 2023,
+                "coverImage": "/images/albums/rauw-alejandro/playa-saturno.jpg",
+                "songs": [
+                  "BABY HELLO",
+                  "VAMPIROS",
+                  "ROSA PASTEL",
+                  "PONTE BELLA",
+                  "DESEO",
+                  "SI TE PEGAS",
+                  "CUANDO AMANEZCA",
+                  "DILUVIO",
+                  "COHETE",
+                  "2/CATORCE"
+                ]
+              },
+              {
+                "name": "SATURNO",
+                "releaseYear": 2022,
+                "coverImage": "/images/albums/rauw-alejandro/saturno.jpg",
+                "songs": [
+                  "SATURNO",
+                  "PUNTO 40",
+                  "CAZADORES",
+                  "DIME QUIEN",
+                  "LEJOS DEL CIELO",
+                  "MÁS DE UNA VEZ",
+                  "CORAZÓN DESPEINADO",
+                  "GATAS",
+                  "RON COLA",
+                  "VERDE MENTA"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Feid",
+            "albums": [
+              {
+                "name": "MOR, NO LE TEMAS A LA OSCURIDAD",
+                "releaseYear": 2023,
+                "coverImage": "/images/albums/feid/mor-no-le-temas.jpg",
+                "songs": [
+                  "BUBALU",
+                  "FERXXO 151",
+                  "GANGSTER",
+                  "PERRO NEGRO",
+                  "PROHIBIDOX",
+                  "LA MAGIA",
+                  "NIEVE",
+                  "ROMANCE CRIMINAL",
+                  "VENTE CONMIGO",
+                  "RITMO DE MEDALLO"
+                ]
+              },
+              {
+                "name": "FELIZ CUMPLEAÑOS FERXXO",
+                "releaseYear": 2022,
+                "coverImage": "/images/albums/feid/feliz-cumpleanos.jpg",
+                "songs": [
+                  "NORMAL",
+                  "CASTIGO",
+                  "FERXXO 100",
+                  "TE MATA",
+                  "CHORRITO PA LAS ANIMAS",
+                  "FELIZ CUMPLEAÑOS FERXXO",
+                  "ULTRA SOLO",
+                  "MONASTERY",
+                  "PANTYSITO",
+                  "FERXXO 66"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Ozuna",
+            "albums": [
+              {
+                "name": "COSMO",
+                "releaseYear": 2023,
+                "coverImage": "/images/albums/ozuna/cosmo.jpg",
+                "songs": [
+                  "FENTI",
+                  "HEY MOR",
+                  "VIDA",
+                  "SOMOS IGUALES",
+                  "DEPRIMIDA",
+                  "LA COPA",
+                  "CHAO BEBE",
+                  "MAÑANA",
+                  "MONOTONÍA",
+                  "4 EVER"
+                ]
+              },
+              {
+                "name": "OzuTochi",
+                "releaseYear": 2022,
+                "coverImage": "/images/albums/ozuna/ozutochi.jpg",
+                "songs": [
+                  "AGUA",
+                  "BEBE",
+                  "PERREO",
+                  "MALA",
+                  "LA JUMPA",
+                  "DIME TÚ",
+                  "PROMESA",
+                  "DÍAS NUBLADOS",
+                  "SINCERO",
+                  "AFUERA"
                 ]
               }
             ]

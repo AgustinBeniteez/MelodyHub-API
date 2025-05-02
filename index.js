@@ -67,24 +67,71 @@ app.get("/", (req, res) => {
         <li><a href="/artist/Linkin Park/2007" style="color: white;">/artist/Linkin Park/2007</a> - Obtiene los albumes de Linkin Park del year 2007</li>
         <li><a href="/artist/Linkin Park/album/Meteora" style="color: white;">/artist/Linkin Park/album/Meteora</a> - Obtiene informacion especifica del album Meteora de Linkin Park</li>
       </ul>
+
+      <h2>Busqueda por Genero y Canciones</h2>
+      <p>Para obtener todos los artistas de un genero especifico, utiliza la ruta <code style="color: white;">/genre/nombre-del-genero/artists</code> </br>Por ejemplo:</p>
+      <ul style="color: white;">
+        <li><a href="/genre/Rock/artists" style="color: white;">/genre/Rock/artists</a> - Obtiene todos los artistas del genero Rock</li>
+      </ul>
+
+      <p>Para buscar informacion sobre una cancion especifica, utiliza la ruta <code style="color: white;">/song/nombre-de-la-cancion</code> </br>Por ejemplo:</p>
+      <ul style="color: white;">
+        <li><a href="/song/Anti-Hero" style="color: white;">/song/Anti-Hero</a> - Obtiene informacion sobre la cancion Anti-Hero</li>
+      </ul>
     </body>
     </html>
   `);
 });
 
 // Ruta para obtener todos los datos del hub
-app.get("/hub", (req, res) => {
+app.get("/hub", async (req, res) => {
   try {
-    const hubData = readFileSync(new URL("./hub/api.json", import.meta.url));
-    res.json(JSON.parse(hubData));
+    const hubData = JSON.parse(
+      readFileSync(new URL("./hub/api.json", import.meta.url))
+    );
+
+    // Procesar todos los álbumes para obtener portadas de Deezer
+    const processedGenres = await Promise.all(
+      hubData.genres.map(async (genre) => {
+        const processedArtists = await Promise.all(
+          genre.artists.map(async (artist) => {
+            const processedAlbums = await Promise.all(
+              artist.albums.map(async (album) => {
+                const deezerData = await searchDeezerTrack(
+                  album.name,
+                  artist.name
+                );
+                return {
+                  ...album,
+                  coverImage: deezerData?.albumCover || album.coverImage,
+                };
+              })
+            );
+            return {
+              ...artist,
+              albums: processedAlbums,
+            };
+          })
+        );
+        return {
+          ...genre,
+          artists: processedArtists,
+        };
+      })
+    );
+
+    res.json({
+      ...hubData,
+      genres: processedGenres,
+    });
   } catch (error) {
-    console.error("Error al leer el archivo JSON:", error);
+    console.error("Error al procesar los datos del hub:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 });
 
 // Ruta para buscar artista por nombre
-app.get("/artist/:name", (req, res) => {
+app.get("/artist/:name", async (req, res) => {
   try {
     const artistName = req.params.name;
     const hubData = JSON.parse(
@@ -98,10 +145,22 @@ app.get("/artist/:name", (req, res) => {
         (a) => a.name.toLowerCase() === artistName.toLowerCase()
       );
       if (artist) {
+        // Procesar los álbumes para obtener las portadas de Deezer
+        const processedAlbums = await Promise.all(
+          artist.albums.map(async (album) => {
+            // Buscar el álbum en Deezer
+            const deezerData = await searchDeezerTrack(album.name, artist.name);
+            return {
+              ...album,
+              coverImage: deezerData?.albumCover || album.coverImage,
+            };
+          })
+        );
+
         artistInfo = {
           name: artist.name,
           genre: genre.name,
-          albums: artist.albums,
+          albums: processedAlbums,
         };
         break;
       }
@@ -119,7 +178,7 @@ app.get("/artist/:name", (req, res) => {
 });
 
 // Ruta para buscar artista por año
-app.get("/artist/:name/:year", (req, res) => {
+app.get("/artist/:name/:year", async (req, res) => {
   try {
     const artistName = req.params.name;
     const year = parseInt(req.params.year);
@@ -138,11 +197,24 @@ app.get("/artist/:name/:year", (req, res) => {
           (album) => album.releaseYear === year
         );
         if (albumsByYear.length > 0) {
+          // Procesar los álbumes para obtener las portadas de Deezer
+          const processedAlbums = await Promise.all(
+            albumsByYear.map(async (album) => {
+              const deezerData = await searchDeezerTrack(
+                album.name,
+                artist.name
+              );
+              return {
+                ...album,
+                coverImage: deezerData?.albumCover || album.coverImage,
+              };
+            })
+          );
           artistInfo = {
             name: artist.name,
             genre: genre.name,
             year: year,
-            albums: albumsByYear,
+            albums: processedAlbums,
           };
         }
         break;
@@ -164,7 +236,7 @@ app.get("/artist/:name/:year", (req, res) => {
 });
 
 // Ruta para buscar álbum específico de un artista
-app.get("/artist/:name/album/:albumName", (req, res) => {
+app.get("/artist/:name/album/:albumName", async (req, res) => {
   try {
     const artistName = req.params.name;
     const albumName = req.params.albumName;
@@ -183,10 +255,16 @@ app.get("/artist/:name/album/:albumName", (req, res) => {
           (a) => a.name.toLowerCase() === albumName.toLowerCase()
         );
         if (album) {
+          // Obtener la portada del álbum desde Deezer
+          const deezerData = await searchDeezerTrack(album.name, artist.name);
+          const processedAlbum = {
+            ...album,
+            coverImage: deezerData?.albumCover || album.coverImage,
+          };
           albumInfo = {
             artist: artist.name,
             genre: genre.name,
-            album: album,
+            album: processedAlbum,
           };
         }
         break;
@@ -200,6 +278,164 @@ app.get("/artist/:name/album/:albumName", (req, res) => {
     }
   } catch (error) {
     console.error("Error al buscar álbum:", error);
+    res.status(500).json({ error: "Error interno del servidor" });
+  }
+});
+
+// Ruta para obtener artistas por género
+app.get("/genre/:name/artists", (req, res) => {
+  try {
+    const genreName = req.params.name;
+    const hubData = JSON.parse(
+      readFileSync(new URL("./hub/api.json", import.meta.url))
+    );
+
+    // Buscar el género y obtener sus artistas
+    const genre = hubData.genres.find(
+      (g) => g.name.toLowerCase() === genreName.toLowerCase()
+    );
+
+    if (genre) {
+      res.json({
+        genre: genre.name,
+        artists: genre.artists.map((artist) => ({
+          name: artist.name,
+          albumCount: artist.albums.length,
+        })),
+      });
+    } else {
+      res.status(404).json({ error: "Género no encontrado" });
+    }
+  } catch (error) {
+    console.error("Error al buscar artistas por género:", error);
+    res.status(500).json({ error: "Error interno del servidor" });
+  }
+});
+
+// Función para buscar en Deezer
+async function searchDeezerTrack(title, artist) {
+  try {
+    const query = `${title} ${artist}`;
+    const response = await fetch(
+      `https://api.deezer.com/search?q=${encodeURIComponent(query)}`
+    );
+    const data = await response.json();
+    if (data.data && data.data.length > 0) {
+      return {
+        preview: data.data[0].preview, // URL de preview de 30 segundos
+        albumCover:
+          data.data[0].album.cover_xl ||
+          data.data[0].album.cover_big ||
+          data.data[0].album.cover, // URL de la portada del álbum
+      };
+    }
+    return null;
+  } catch (error) {
+    console.error("Error al buscar en Deezer:", error);
+    return null;
+  }
+}
+
+// Ruta para buscar canción
+app.get("/song/:name", async (req, res) => {
+  try {
+    const songName = req.params.name;
+    const hubData = JSON.parse(
+      readFileSync(new URL("./hub/api.json", import.meta.url))
+    );
+
+    // Buscar la canción en todos los álbumes de todos los artistas
+    let songInfo = [];
+    for (const genre of hubData.genres) {
+      for (const artist of genre.artists) {
+        for (const album of artist.albums) {
+          const songFound = album.songs.find(
+            (song) => song.toLowerCase() === songName.toLowerCase()
+          );
+          if (songFound) {
+            // Construir la ruta del archivo MP3
+            const audioPath = new URL(
+              `./audio/${artist.name}/${album.name}/${songFound}.mp3`,
+              import.meta.url
+            );
+
+            let audioUrl = null;
+            let albumImageUrl = album.coverImage;
+            let source = "local";
+
+            try {
+              const stat = readFileSync(audioPath);
+              audioUrl = `/stream/${encodeURIComponent(
+                artist.name
+              )}/${encodeURIComponent(album.name)}/${encodeURIComponent(
+                songFound
+              )}`;
+            } catch (err) {
+              // Si el archivo local no existe, buscar en Deezer
+              const deezerData = await searchDeezerTrack(
+                songFound,
+                artist.name
+              );
+              if (deezerData) {
+                audioUrl = deezerData.preview;
+                albumImageUrl = deezerData.albumCover;
+                source = "deezer";
+              }
+            }
+
+            songInfo.push({
+              title: songFound,
+              artist: artist.name,
+              album: album.name,
+              genre: genre.name,
+              releaseYear: album.releaseYear,
+              audioUrl: audioUrl,
+              albumImageUrl: albumImageUrl,
+              source: source,
+            });
+          }
+        }
+      }
+    }
+
+    if (songInfo.length > 0) {
+      res.json(songInfo);
+    } else {
+      res.status(404).json({ error: "Canción no encontrada" });
+    }
+  } catch (error) {
+    console.error("Error al buscar canción:", error);
+    res.status(500).json({ error: "Error interno del servidor" });
+  }
+});
+
+// Ruta para streaming de audio
+app.get("/stream/:artist/:album/:song", (req, res) => {
+  try {
+    const { artist, album, song } = req.params;
+    const audioPath = new URL(
+      `./audio/${decodeURIComponent(artist)}/${decodeURIComponent(
+        album
+      )}/${decodeURIComponent(song)}.mp3`,
+      import.meta.url
+    );
+
+    // Verificar si el archivo existe
+    try {
+      const stat = readFileSync(audioPath);
+      res.writeHead(200, {
+        "Content-Type": "audio/mpeg",
+        "Content-Length": stat.length,
+        "Accept-Ranges": "bytes",
+      });
+
+      const readStream = createReadStream(audioPath);
+      readStream.pipe(res);
+    } catch (err) {
+      res.status(404).json({ error: "Archivo de audio no encontrado" });
+    }
+  } catch (error) {
+    console.error("Error al transmitir audio:", error);
     res.status(500).json({ error: "Error interno del servidor" });
   }
 });
