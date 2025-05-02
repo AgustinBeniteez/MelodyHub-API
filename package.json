@@ -1,0 +1,19 @@
+{
+  "name": "melody-hub-api",
+  "version": "1.0.0",
+  "description": "es una API diseñada para ofrecer a desarrolladores acceso a metadatos musicales completos: álbumes, pistas, autores y portadas en alta resolución.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AgustinBeniteez/MelodyHub-API.git"
+  },
+  "author": "Agustin Benitez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AgustinBeniteez/MelodyHub-API/issues"
+  },
+  "homepage": "https://github.com/AgustinBeniteez/MelodyHub-API#readme"
+}
