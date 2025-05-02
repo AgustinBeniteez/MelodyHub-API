@@ -4,6 +4,85 @@
         "name": "Pop",
         "artists": [
           {
+            "name": "Olivia Rodrigo",
+            "albums": [
+              {
+                "name": "GUTS",
+                "releaseYear": 2023,
+                "coverImage": "/images/albums/olivia-rodrigo/guts.jpg",
+                "songs": [
+                  "vampire",
+                  "bad idea right?",
+                  "all-american bitch",
+                  "MAKING THE BED",
+                  "logical",
+                  "get him back!",
+                  "love is embarrassing",
+                  "ballad of a homeschooled girl",
+                  "pretty isn't pretty",
+                  "teenage dream"
+                ]
+              },
+              {
+                "name": "SOUR",
+                "releaseYear": 2021,
+                "coverImage": "/images/albums/olivia-rodrigo/sour.jpg",
+                "songs": [
+                  "brutal",
+                  "traitor",
+                  "drivers license",
+                  "1 step forward, 3 steps back",
+                  "deja vu",
+                  "good 4 u",
+                  "enough for you",
+                  "happier",
+                  "jealousy, jealousy",
+                  "favorite crime",
+                  "hope ur ok"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Taylor Swift",
+            "albums": [
+              {
+                "name": "1989 (Taylor's Version)",
+                "releaseYear": 2023,
+                "coverImage": "/images/albums/taylor-swift/1989-tv.jpg",
+                "songs": [
+                  "Welcome to New York",
+                  "Blank Space",
+                  "Style",
+                  "Out of the Woods",
+                  "All You Had to Do Was Stay",
+                  "Shake It Off",
+                  "I Wish You Would",
+                  "Bad Blood",
+                  "Wildest Dreams",
+                  "How You Get the Girl"
+                ]
+              },
+              {
+                "name": "Midnights",
+                "releaseYear": 2022,
+                "coverImage": "/images/albums/taylor-swift/midnights.jpg",
+                "songs": [
+                  "Lavender Haze",
+                  "Maroon",
+                  "Anti-Hero",
+                  "Snow on the Beach",
+                  "You're on Your Own, Kid",
+                  "Midnight Rain",
+                  "Question...?",
+                  "Vigilante Shit",
+                  "Bejeweled",
+                  "Karma"
+                ]
+              }
+            ]
+          },
+          {
             "name": "Aitana",
             "albums": [
               {
@@ -183,6 +262,83 @@
         "name": "Rock",
         "artists": [
           {
+            "name": "Metallica",
+            "albums": [
+              {
+                "name": "72 Seasons",
+                "releaseYear": 2023,
+                "coverImage": "/images/albums/metallica/72-seasons.jpg",
+                "songs": [
+                  "72 Seasons",
+                  "Shadows Follow",
+                  "Screaming Suicide",
+                  "Sleepwalk My Life Away",
+                  "You Must Burn!",
+                  "Lux Æterna",
+                  "Crown of Barbed Wire",
+                  "Chasing Light",
+                  "If Darkness Had a Son",
+                  "Too Far Gone?"
+                ]
+              },
+              {
+                "name": "Hardwired... to Self-Destruct",
+                "releaseYear": 2016,
+                "coverImage": "/images/albums/metallica/hardwired.jpg",
+                "songs": [
+                  "Hardwired",
+                  "Atlas, Rise!",
+                  "Now That We're Dead",
+                  "Moth Into Flame",
+                  "Dream No More",
+                  "Halo on Fire",
+                  "Confusion",
+                  "ManUNkind",
+                  "Here Comes Revenge",
+                  "Am I Savage?"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Foo Fighters",
+            "albums": [
+              {
+                "name": "But Here We Are",
+                "releaseYear": 2023,
+                "coverImage": "/images/albums/foo-fighters/but-here-we-are.jpg",
+                "songs": [
+                  "Rescued",
+                  "Under You",
+                  "Hearing Voices",
+                  "But Here We Are",
+                  "The Glass",
+                  "Nothing At All",
+                  "Show Me How",
+                  "Beyond Me",
+                  "The Teacher",
+                  "Rest"
+                ]
+              },
+              {
+                "name": "Medicine at Midnight",
+                "releaseYear": 2021,
+                "coverImage": "/images/albums/foo-fighters/medicine-at-midnight.jpg",
+                "songs": [
+                  "Making a Fire",
+                  "Shame Shame",
+                  "Cloudspotter",
+                  "Waiting on a War",
+                  "Medicine at Midnight",
+                  "No Son of Mine",
+                  "Holding Poison",
+                  "Chasing Birds",
+                  "Love Dies Young"
+                ]
+              }
+            ]
+          },
+          {
             "name": "Linkin Park",
             "albums": [
               {
@@ -341,7 +497,7 @@
               {
                 "name": "From Zero Deluxe Edition",
                 "releaseYear": 2025,
-                "coverImage": "/images/albums/linkin-park/from-zero-deluxe.jpg",
+                "coverImage": "https://cdn-images.dzcdn.net/images/cover/91043dc582be268d9f6aa3c8208f2b6c/1000x1000-000000-80-0-0.jpg",
                 "songs": [
                   "UP From the bottom",
                   "UnShatter"
@@ -571,6 +727,84 @@
         "name": "Reggaeton",
         "artists": [
           {
+            "name": "Feid",
+            "albums": [
+              {
+                "name": "MOR, NO LE TEMAS A LA OSCURIDAD",
+                "releaseYear": 2023,
+                "coverImage": "/images/albums/feid/mor.jpg",
+                "songs": [
+                  "BUBALU",
+                  "FERXXO 151",
+                  "GANGSTER",
+                  "PROHIBIDOX",
+                  "HEY MOR",
+                  "VENTE CONMIGO",
+                  "CASTIGO",
+                  "PERRO NEGRO",
+                  "PRIVILEGIOS",
+                  "ROMANCE CRIMINAL"
+                ]
+              },
+              {
+                "name": "FELIZ CUMPLEAÑOS FERXXO",
+                "releaseYear": 2022,
+                "coverImage": "/images/albums/feid/feliz-cumpleanos.jpg",
+                "songs": [
+                  "FELIZ CUMPLEAÑOS FERXXO",
+                  "NORMAL",
+                  "TE MATA",
+                  "NIEVE",
+                  "CHORRITO PA LAS ANIMAS",
+                  "FERXXO 100",
+                  "AMOR DE MI VIDA",
+                  "FERXXO 66",
+                  "ULTRA SOLO",
+                  "CASTIGO"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Rauw Alejandro",
+            "albums": [
+              {
+                "name": "PLAYA SATURNO",
+                "releaseYear": 2023,
+                "coverImage": "/images/albums/rauw-alejandro/playa-saturno.jpg",
+                "songs": [
+                  "BABY HELLO",
+                  "DILUVIO",
+                  "ROSA PASTEL",
+                  "QUE RICO CH*NGAMOS",
+                  "NAVEGANDO",
+                  "PONTE BELLA",
+                  "SI TE PEGAS",
+                  "DIME QUIEN",
+                  "COHETE",
+                  "NO ME DEJES SOLO"
+                ]
+              },
+              {
+                "name": "SATURNO",
+                "releaseYear": 2022,
+                "coverImage": "/images/albums/rauw-alejandro/saturno.jpg",
+                "songs": [
+                  "SATURNO",
+                  "PUNTO 40",
+                  "CAZADORES",
+                  "DIME CUANTAS VECES",
+                  "LEJOS DEL CIELO",
+                  "MÁS DE UNA VEZ",
+                  "CORAZÓN DESPEINADO",
+                  "GATAS",
+                  "RON COLA",
+                  "DEJAU"
+                ]
+              }
+            ]
+          },
+          {
             "name": "Mora",
             "albums": [
               {
@@ -745,45 +979,6 @@
                   "GATAS",
                   "RON COLA",
                   "VERDE MENTA"
-                ]
-              }
-            ]
-          },
-          {
-            "name": "Feid",
-            "albums": [
-              {
-                "name": "MOR, NO LE TEMAS A LA OSCURIDAD",
-                "releaseYear": 2023,
-                "coverImage": "/images/albums/feid/mor-no-le-temas.jpg",
-                "songs": [
-                  "BUBALU",
-                  "FERXXO 151",
-                  "GANGSTER",
-                  "PERRO NEGRO",
-                  "PROHIBIDOX",
-                  "LA MAGIA",
-                  "NIEVE",
-                  "ROMANCE CRIMINAL",
-                  "VENTE CONMIGO",
-                  "RITMO DE MEDALLO"
-                ]
-              },
-              {
-                "name": "FELIZ CUMPLEAÑOS FERXXO",
-                "releaseYear": 2022,
-                "coverImage": "/images/albums/feid/feliz-cumpleanos.jpg",
-                "songs": [
-                  "NORMAL",
-                  "CASTIGO",
-                  "FERXXO 100",
-                  "TE MATA",
-                  "CHORRITO PA LAS ANIMAS",
-                  "FELIZ CUMPLEAÑOS FERXXO",
-                  "ULTRA SOLO",
-                  "MONASTERY",
-                  "PANTYSITO",
-                  "FERXXO 66"
                 ]
               }
             ]
