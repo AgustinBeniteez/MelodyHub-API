@@ -65,7 +65,7 @@ app.get("/", (req, res) => {
       <ul style="color: white;">
         <li><a href="/artist/Linkin Park" style="color: white;">/artist/Linkin Park</a> - Obtiene informacion sobre Linkin Park y sus albumes</li>
         <li><a href="/artist/Linkin Park/2007" style="color: white;">/artist/Linkin Park/2007</a> - Obtiene los albumes de Linkin Park del year 2007</li>
-        <li><a href="/artist/Linkin Park/album/The Emptiness Machine" style="color: white;">/artist/Linkin Park/album/The Emptiness Machine</a> - Obtiene informacion especifica del album The Emptiness Machine de Linkin Park</li>
+        <li><a href="/artist/Linkin Park/album/From Zero" style="color: white;">/artist/Linkin Park/album/From Zero</a> - Obtiene informacion especifica del album From Zero de Linkin Park</li>
       </ul>
 
       <h2>Busqueda por Genero y Canciones</h2>
@@ -76,7 +76,7 @@ app.get("/", (req, res) => {
 
       <p>Para buscar informacion sobre una cancion especifica, utiliza la ruta <code style="color: white;">/song/nombre-de-la-cancion</code> </br>Por ejemplo:</p>
       <ul style="color: white;">
-        <li><a href="/song/Anti-Hero" style="color: white;">/song/Anti-Hero</a> - Obtiene informacion sobre la cancion Anti-Hero</li>
+        <li><a href="/song/The Emptiness Machine" style="color: white;">/song/The Emptiness Machine</a> - Obtiene informacion sobre la cancion The Emptiness Machine</li>
       </ul>
     </body>
     </html>

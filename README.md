@@ -1,7 +1,7 @@
 # MelodyHub-API
 
 Bienvenido a MelodyHub API
-Versión: 1.4.2
+Versión: 1.4.3
 
 Puerto: 10000
 
@@ -17,7 +17,7 @@ Por ejemplo:
 
 - `/artist/Linkin Park` - Obtiene información sobre Linkin Park y sus álbumes
 - `/artist/Linkin Park/2007` - Obtiene los álbumes de Linkin Park del año 2007
-- `/artist/Linkin Park/album/Meteora` - Obtiene información específica del álbum Meteora de Linkin Park
+- `/artist/Linkin Park/album/from Zero` - Obtiene información específica del álbum From Zero de Linkin Park
 
 ### Búsqueda por Género y Canciones
 
