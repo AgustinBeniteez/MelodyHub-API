@@ -1,7 +1,7 @@
 # MelodyHub-API
 
 Bienvenido a MelodyHub API
-Versión: 1.4.1
+Versión: 1.4.2
 
 Puerto: 10000
 

@@ -1,6 +1,6 @@
 {
   "name": "melody-hub-api",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "es una API diseñada para ofrecer a desarrolladores acceso a metadatos musicales completos: álbumes, pistas, autores y portadas en alta resolución.",
   "main": "index.js",
   "scripts": {
