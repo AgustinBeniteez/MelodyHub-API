@@ -32,6 +32,10 @@ app.use((req, res, next) => {
 // Puerto para el servidor
 const PORT = process.env.PORT || 3000;
 
+app.get("/wakeup", (req, res) => {
+  res.send("API despertada🧸!");
+});
+
 // Ruta de prueba
 app.get("/", (req, res) => {
   res.setHeader("Content-Type", "Text/html");
@@ -60,6 +64,7 @@ app.get("/", (req, res) => {
       <p>Puerto: ${PORT}</p>
 
       <h2>Documentacion</h2>
+      <p>Para despertar el servidor, utiliza la ruta <code style="color: white;">/wakeup</code></p>
       <p>Para obtener informacion sobre los datos del hub, visita <a href="/hub" style="color: white;">/hub</a>.</p>
       <p>Para buscar informacion de un artista especifico, utiliza la ruta <code style="color: white;">/artist/nombre-del-artista</code> </br>Por ejemplo:</p>
       <ul style="color: white;">

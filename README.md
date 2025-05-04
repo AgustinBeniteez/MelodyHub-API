@@ -1,12 +1,14 @@
 # MelodyHub-API
 
 Bienvenido a MelodyHub API
-Versión: 1.4.3
+Versión: 1.4.4
 
 Puerto: 10000
 
 ## Documentación
+Despertar el servidor con la ruta `/wakeup`
 
+### Todo el contenido en un JSON
 Para obtener información sobre los datos del hub, visita `/hub`.
 
 ### Búsqueda de Artistas
